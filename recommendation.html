@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Karma">
+    <link rel="stylesheet" href="style.css">
+    <title>FOOD RECOMMENDATION</title>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <ul class="links-container">
+                <li class="link-item"><a href="index.html">Home</a></li>
+                <li class="link-item"><a href="background.html">Background</a></li>
+                <li class="link-item"><a href="todo.html">ToDo</a></li>
+                <li class="link-item"><a href="accommodation.html">Accommodation</a></li>
+                <li class="link-item"><a href="aboutus.html"><img src="picture/officiallogo.png" class="logo" alt="Layang Layangan Logo"></a></li>
+                <li class="link-item"><a href="recommendation.html">Recommendation</a></li>
+                <li class="link-item"><a href="traveltips.html">TravelTips</a></li>
+                <li class="link-item"><a href="gallery.html">Gallery</a></li>
+                <li class="link-item"><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="background">
+        <img src="picture/foodbg.jpg" class="background-image" width="100%">
+        <!-- grid -->
+        <div class="grid-slider">
+            <div class="grid-item hide"></div>
+            <div class="grid-item hide"></div>
+            <div class="grid-item hide"></div>
+            <div class="grid-item hide"></div>
+            <div class="grid-item hide"></div>
+            <div class="grid-item hide"></div>
+        </div>
+        <script>
+        //header
+            //slider image array
+        
+            const sliderImgs = ["picture/img1.jpeg", "picture/img2.jpeg", "picture/img3.jpeg", "picture/img4.jpeg", "picture/img5.jpeg", "picture/img6.jpeg"];
+            let sliderImage = document.querySelector('.background-image');
+            let sliderGrids = [...document.querySelectorAll('.grid-item')];
+    
+            let currentImage = 0;
+    
+            setInterval(() => {
+                changeSliderImage();
+            }, 5000);
+    
+            const changeSliderImage = () => {
+                sliderGrids.map((gridItem, index) => {
+                    setTimeout(() => {
+                        gridItem.classList.remove('hide');
+    
+                        setTimeout(() => {
+    
+                            if(index == sliderGrids.length - 1){
+                                if(currentImage >= sliderImgs.length - 1){
+                                    currentImage = 0;
+                                } else{
+                                    currentImage++;
+                                }
+    
+                                sliderImage.src = `img/${sliderImgs[currentImage]}`;
+    
+                                sliderGrids.map((item, i) => {
+                                    setTimeout(() => {
+                                        item.classList.add('hide')
+                                    }, i * 100);
+                                })
+    
+                            }
+    
+                        }, 100);
+    
+                    }, index * 100);
+                 })
+            }
+        </script>
+    </div>
+    <main class="hero-section" id="hero-section">
+
+        <div class="hero-section-content" data-aos="fade-up">
+            <h1 class="hero-section-title">Food Hunting</h1>
+            <h2 class="hero-section-sub-heading">tackle your taste bud at Kg Layang-Layangan</h2>
+            <br>
+            <br>
+            <br>
+            <p class="hero-section-sub-heading-one">Scroll Down</p>
+        </div>
+        <!-- scroll down img -->
+        <img src="picture/downarrow.png" class="scroll-down-icon" alt="scroll down indicator">
+    </main>
+    <br>
+    <br>
+    <div class="rec-section">
+        <br>
+        <br>
+        <h1 class="rec-title">RESTAURANT / CAFE / STALL</h1>
+        <br>
+        <br>
+        <br>
+        <div class="rec-s1">
+            <img src="picture/stationikanbakar.jpg" width="30%">
+            <img src="picture/stationimages/stationimg1.jpg" width="30%">
+            <br>
+            <br>
+        </div>
+        <br>
+        <br>
+        <div class="rec-s1-text">
+            <p class="p1-recommendation"><b>Stall:</b> Station Ikan Bakar Ely Wati</p>
+            <p class="p1-recommendation"><b>Opening Hours:</b> everyday from 9:00 a.m to 10:00 p.m</p>
+            <p class="p1-recommendation"><b>Address:</b> Lot 20531305, 145, Warung Seafood, Kampung Bukit Kalam, 87007 Labuan, Wilayah Persekutuan Labuan</p>
+        </div>
+        <br>
+        <br>
+        <div class="rec-s2">
+            <img src="picture/pslayangan.jpg" width="30%">
+            <img src="picture/psimages/psimg1.jpg" width="30%">
+            <br>
+            <br>
+        </div>
+        <br>
+        <br>
+        <div class="rec-s2-text">
+            <p class="p1-recommendation"><b>Restaurant:</b> PS Layangan </p>
+            <p class="p1-recommendation"><b>Opening Hours:</b> everyday from 7:00 a.m to 11:00 p.m</p>
+            <p class="p1-recommendation"><b>Address:</b> block 1 simpang hj jani kg, layang layangan, 87000, Wilayah Persekutuan Labuan</p>
+        </div>
+        <br>
+        <br>
+        <br>
+        <br>
+        <div class="rec-s3">
+            <img src="picture/duansataystation.jpg" width="30%">
+            <img src="picture/duanimages/duanimg1.jpg" width="30%">
+            <br>
+            <br>
+        </div>
+        <br>
+        <br>
+        <div class="rec-s3-text">
+            <p class="p1-recommendation"><b>Restaurant:</b> Duan Satay Station </p>
+            <p class="p1-recommendation"><b>Opening Hours:</b> Tuesday-Friday from 4:00 p.m to 10:00 p.m</p>
+            <p class="p1-recommendation"><b>Address:</b> block 1 simpang hj jani kg, layang layangan, 87000, Wilayah Persekutuan Labuan</p>
+        </div>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <div class="rec-s4">
+            <img src="picture/145warung.jpg" width="30%">
+            <img src="picture/145restaurant/145menu1.jpg" width="30%">
+            <br>
+            <br>
+        </div>
+        <br>
+        <br>
+        <div class="rec-s4-text">
+            <p class="p1-recommendation"><b>Restaurant:</b> 145 Warung Seafood</p>
+            <p class="p1-recommendation"><b>Opening Hours:</b> everyday from 9:00 a.m to 10:00 p.m</p>
+            <p class="p1-recommendation"><b>Address:</b> Lot 20531305, 145, Warung Seafood, Kampung Bukit Kalam, 87007 Labuan, Wilayah Persekutuan Labuan</p>
+        </div>
+        <br>
+        <br>
+        <div class="rec-s5">
+            <img src="picture/corritoscabin.jpg" width="30%">
+            <img src="picture/cabinimage/cabinimg1.jpg" width="30%">
+            <br>
+            <br>
+        </div>
+        <br>
+        <br>
+        <div class="rec-s5-text">
+            <p class="p1-recommendation"><b>Stall:</b> Corritos cabin</p>
+            <p class="p1-recommendation"><b>Opening Hours:</b> weekends from 11:30 a.m to 05:30 p.m</p>
+            <p class="p1-recommendation"><b>Address:</b> 85MV+FC, Layang-Layangan, 87000 Labuan, Labuan Federal Territory</p>
+        </div>
+        <br>
+        <br>
+        <div class="rec-s6">
+            <img src="picture/layangansunsetcafe.jpeg" width="30%">
+            <img src="picture/sunsetimages/sunsetimg1.jpg" width="30%">
+            <br>
+            <br>
+        </div>
+        <br>
+        <br>
+        <div class="rec-s6-text">
+            <p class="p1-recommendation"><b>Cafe:</b> Layangan Sunset Cafe</p>
+            <p class="p1-recommendation"><b>Opening Hours:</b> Tuesday-Sunday from 03:00 p.m to 11:00 p.m</p>
+            <p class="p1-recommendation"><b>Address:</b> Pantai Layangan, Kampung Layang-layangan, 87000 Labuan, Wilayah Persekutuan Labuan</p>
+        </div>
+        <br>
+        <br>
+        <br>
+    </div>
+    <div class="footer"> 
+        <br>
+        <a href="aboutus.html" target="_blank">About Us</a>
+        <br>
+        <br>
+        <p class="pfooter"> This local website created for assignment purposed only.</p>
+        <p class="pfooter"> Recommended browser Microsoft Resolution 1696x645</p>
+        <p class="pfooter"><b>Last Update:</b> January 1st, 2024</p>
+        <p class="pfooter">&copy; Copyright 2024. Kg Layang-Layangan Local Website, All Rights Reserved.</p>
+        <br>
+        <div>
+            <audio controls autoplay loop>
+                <source src="TakeMyHand_instrumental.mp3" type="audio/mp3" >
+            </audio>
+        </div>
+      </div>
+</body>
+</html>

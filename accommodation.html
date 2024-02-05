@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Karma">
+    <link rel="stylesheet" href="style.css">
+    <title>TO-STAY</title>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <ul class="links-container">
+                <li class="link-item"><a href="index.html">Home</a></li>
+                <li class="link-item"><a href="background.html">Background</a></li>
+                <li class="link-item"><a href="todo.html">ToDo</a></li>
+                <li class="link-item"><a href="accommodation.html">Accommodation</a></li>
+                <li class="link-item"><a href="aboutus.html"><img src="picture/officiallogo.png" class="logo" alt="Layang Layangan Logo"></a></li>
+                <li class="link-item"><a href="recommendation.html">Recommendation</a></li>
+                <li class="link-item"><a href="traveltips.html">TravelTips</a></li>
+                <li class="link-item"><a href="gallery.html">Gallery</a></li>
+                <li class="link-item"><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="background">
+        <img src="picture/accommodationbg.jpg" class="background-image" width="100%">
+        <!-- grid -->
+        <div class="grid-slider">
+            <div class="grid-item hide"></div>
+            <div class="grid-item hide"></div>
+            <div class="grid-item hide"></div>
+            <div class="grid-item hide"></div>
+            <div class="grid-item hide"></div>
+            <div class="grid-item hide"></div>
+        </div>
+        <script>
+        //header
+            //slider image array
+        
+            const sliderImgs = ["picture/img1.jpeg", "picture/img2.jpeg", "picture/img3.jpeg", "picture/img4.jpeg", "picture/img5.jpeg", "picture/img6.jpeg"];
+            let sliderImage = document.querySelector('.background-image');
+            let sliderGrids = [...document.querySelectorAll('.grid-item')];
+    
+            let currentImage = 0;
+    
+            setInterval(() => {
+                changeSliderImage();
+            }, 5000);
+    
+            const changeSliderImage = () => {
+                sliderGrids.map((gridItem, index) => {
+                    setTimeout(() => {
+                        gridItem.classList.remove('hide');
+    
+                        setTimeout(() => {
+    
+                            if(index == sliderGrids.length - 1){
+                                if(currentImage >= sliderImgs.length - 1){
+                                    currentImage = 0;
+                                } else{
+                                    currentImage++;
+                                }
+    
+                                sliderImage.src = `img/${sliderImgs[currentImage]}`;
+    
+                                sliderGrids.map((item, i) => {
+                                    setTimeout(() => {
+                                        item.classList.add('hide')
+                                    }, i * 100);
+                                })
+    
+                            }
+    
+                        }, 100);
+    
+                    }, index * 100);
+                 })
+            }
+        </script>
+    </div>
+    <main class="hero-section" id="hero-section">
+
+        <div class="hero-section-content" data-aos="fade-up">
+            <h1 class="hero-section-title">Place To Stay</h1>
+            <h2 class="hero-section-sub-heading">night ocean breeze only at Kg Layang-Layangan</h2>
+            <br>
+            <br>
+            <br>
+            <p class="hero-section-sub-heading-one">Scroll Down</p>
+        </div>
+        <!-- scroll down img -->
+        <img src="picture/downarrow.png" class="scroll-down-icon" alt="scroll down indicator">
+    </main>
+    <br>
+    <br>
+    <div class="acc-section">
+        <br>
+        <br>
+        <h1 class="acc-title">HOMESTAY / HOTEL / RESORT</h1>
+        <br>
+        <br>
+        <br>
+        <div class="acc-s1">
+            <img src="picture/palmbeach.jpg" width="30%">
+            <img src="picture/pillyhomestay.jpg" width="30%">
+            <br>
+            <br>
+        </div>
+        <br>
+        <br>
+        <div class="acc-s1-text">
+            <p class="p1-accmmodation"><b>Palm Beach Resort,</b> 8.1km, 12 minute by car</p>
+            <p class="p1-accmmodation"><b>Pilly Homestay,</b> 350m, 5 minute walking</p>
+        </div>
+        <br>
+        <br>
+        <div class="acc-s2">
+            <img src="picture/myhome.jpg" width="30%">
+            <img src="picture/tiarahotel.jpg" width="30%">
+            <br>
+            <br>
+        </div>
+        <br>
+        <br>
+        <div class="acc-s2-text">
+            <p class="p1-accmmodation"><b>Genggarak Homestay,</b> 6km, 8 minute by car</p>
+            <p class="p1-accmmodation"><b>Tiara Hotel</b> 12.1km, 16 minute by car</p>
+        </div>
+        <br>
+        <br>
+        <br>
+    </div>
+    <div class="footer"> 
+        <br>
+        <a href="aboutus.html" target="_blank">About Us</a>
+        <br>
+        <br>
+        <p class="pfooter"> This local website created for assignment purposed only.</p>
+        <p class="pfooter"> Recommended browser Microsoft Resolution 1696x645</p>
+        <p class="pfooter"><b>Last Update:</b> January 1st, 2024</p>
+        <p class="pfooter">&copy; Copyright 2024. Kg Layang-Layangan Local Website, All Rights Reserved.</p>
+        <br>
+        <div>
+            <audio controls autoplay loop>
+                <source src="TakeMyHand_instrumental.mp3" type="audio/mp3" >
+            </audio>
+        </div>
+      </div>
+</body>
+</html>

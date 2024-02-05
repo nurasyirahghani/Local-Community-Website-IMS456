@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Karma">
+    <link rel="stylesheet" href="style.css">
+    <title>TRAVEL TIPS</title>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <ul class="links-container">
+                <li class="link-item"><a href="index.html">Home</a></li>
+                <li class="link-item"><a href="background.html">Background</a></li>
+                <li class="link-item"><a href="todo.html">ToDo</a></li>
+                <li class="link-item"><a href="accommodation.html">Accommodation</a></li>
+                <li class="link-item"><a href="aboutus.html"><img src="picture/officiallogo.png" class="logo" alt="Layang Layangan Logo"></a></li>
+                <li class="link-item"><a href="recommendation.html">Recommendation</a></li>
+                <li class="link-item"><a href="traveltips.html">TravelTips</a></li>
+                <li class="link-item"><a href="gallery.html">Gallery</a></li>
+                <li class="link-item"><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="background">
+        <img src="picture/travelbg.jpg" class="background-image" width="100%">
+        <!-- grid -->
+        <div class="grid-slider">
+            <div class="grid-item hide"></div>
+            <div class="grid-item hide"></div>
+            <div class="grid-item hide"></div>
+            <div class="grid-item hide"></div>
+            <div class="grid-item hide"></div>
+            <div class="grid-item hide"></div>
+        </div>
+        <script>
+        //header
+            //slider image array
+        
+            const sliderImgs = ["picture/img1.jpeg", "picture/img2.jpeg", "picture/img3.jpeg", "picture/img4.jpeg", "picture/img5.jpeg", "picture/img6.jpeg"];
+            let sliderImage = document.querySelector('.background-image');
+            let sliderGrids = [...document.querySelectorAll('.grid-item')];
+    
+            let currentImage = 0;
+    
+            setInterval(() => {
+                changeSliderImage();
+            }, 5000);
+    
+            const changeSliderImage = () => {
+                sliderGrids.map((gridItem, index) => {
+                    setTimeout(() => {
+                        gridItem.classList.remove('hide');
+    
+                        setTimeout(() => {
+    
+                            if(index == sliderGrids.length - 1){
+                                if(currentImage >= sliderImgs.length - 1){
+                                    currentImage = 0;
+                                } else{
+                                    currentImage++;
+                                }
+    
+                                sliderImage.src = `img/${sliderImgs[currentImage]}`;
+    
+                                sliderGrids.map((item, i) => {
+                                    setTimeout(() => {
+                                        item.classList.add('hide')
+                                    }, i * 100);
+                                })
+    
+                            }
+    
+                        }, 100);
+    
+                    }, index * 100);
+                 })
+            }
+        </script>
+    </div>
+    <main class="hero-section" id="hero-section">
+
+        <div class="hero-section-content" data-aos="fade-up">
+            <h1 class="hero-section-title">Enjoyable Trips</h1>
+            <h2 class="hero-section-sub-heading">prioritize your safety</h2>
+            <br>
+            <br>
+            <br>
+            <p class="hero-section-sub-heading-one">Scroll Down</p>
+        </div>
+        <!-- scroll down img -->
+        <img src="picture/downarrow.png" class="scroll-down-icon" alt="scroll down indicator">
+    </main>
+    <br>
+    <br>
+    <div class="travel-section">
+        <br>
+        <br>
+        <h1 class="travel-title">TRAVEL TIPS</h1>
+        <br>
+        <p class="p1-travel">Follow these <b>8 Steps</b> for a memorable trips</p>
+        <br>
+        <br>
+        <div class="step1-text">
+            <p class="p1-traveltips"><b> Step 1:</b> Make copies of important document </p>
+        </div>
+        <div class="step1-img">
+            <img src="picture/copies.jpg" width="30%">
+        </div>
+        <div class="s1-decs">
+            <p class="p1-desc">It provides a backup in case the original documents are lost or stolen. Additionally, having copies can expedite</p>
+            <p class="p1-desc">the process of obtaining replacements, and it also assists in proving your identity and citizenship if the need arises</p>
+            <p class="p1-desc">while abroad. This precautionary measure helps to ensure a smoother and less stressful travel experience overall</p>
+        </div>
+        <br>
+        <br>
+        <br>
+        <div class="step2-text">
+            <p class="p1-traveltips"><b> Step 2:</b> Use a small backpack / suitcase </p>
+        </div>
+        <div class="step2-img">
+            <img src="picture/backpack.webp" width="30%">
+        </div>
+        <div class="s2-decs">
+            <p class="p2-desc">Using a small backpack or suitcase while travelling promotes packing efficiency and mobility, allowing for</p>
+            <p class="p2-desc">easier navigation in various settings. It can also helps prevent overpacking and encourages prioritizing</p>
+            <p class="p2-desc">essential items for the trips</p>
+        </div>
+        <br>
+        <br>
+        <br>
+        <div class="step3-text">
+            <p class="p1-traveltips"><b> Step 3:</b> Download and install useful travel apps </p>
+        </div>
+        <div class="step3-img">
+            <img src="picture/travelapp.jpeg" width="30%">
+        </div>
+        <div class="s3-decs">
+            <p class="p3-desc">Downloading and installing useful travel apps enhance the travel experience by providing access to navigation,</p>
+            <p class="p3-desc">language translation, and local recommendations, facilitating smoother exploration of new destinations. These</p>
+            <p class="p3-desc">apps also offer convenience, enabling easy access to transportation options, accommodations bookings, and real</p>
+            <p class="p3-desc">-time updates on travel-related information.</p>
+        </div>
+        <br>
+        <br>
+        <br>
+        <div class="step4-text">
+            <p class="p1-traveltips"><b> Step 4:</b> Always carry a powerbank </p>
+        </div>
+        <div class="step4-img">
+            <img src="picture/powerbank.jpeg" width="30%">
+        </div>
+        <div class="s4-decs">
+            <p class="p4-desc">Carrying a power bank while traveling is essential as it ensures that your electronic devices remain charged,</p>
+            <p class="p4-desc">allowing you to stay connected, access map, and capture memories without the worry of running out of battery.</p>
+            <p class="p4-desc">It provides a reliable backup power source, especially in situations where access to electrical outlest may be</p>
+            <p class="p4-desc">limited, ensuring continued functionality of your devices throughout your travels.</p>
+        </div>
+        <br>
+        <br>
+        <br>
+        <div class="step5-text">
+            <p class="p1-traveltips"><b> Step 5:</b> Learn basic phrases in the native language of the destination </p>
+        </div>
+        <div class="step5-img">
+            <img src="picture/learn.jpg" width="30%">
+        </div>
+        <div class="s5-decs">
+            <p class="p5-desc">Learning basic phrases in the native language of the destinations fosters respect and appreciation for the local</p>
+            <p class="p5-desc">culture, often resulting in more meaningful and positive interactions with residents. It also facilitates smoother</p>
+            <p class="p5-desc">communication, making essential tasks such as asking for directions, ordeing food, and seeking help more manageable</p>
+            <p class="p5-desc">and enjoyable during the entire trips.</p>
+        </div>
+        <br>
+        <br>
+        <br>
+        <div class="step6-text">
+            <p class="p1-traveltips"><b> Step 6:</b> Keep your family and friends updated </p>
+        </div>
+        <div class="step6-img">
+            <img src="picture/updated.webp" width="30%">
+        </div>
+        <div class="s6-decs">
+            <p class="p6-desc">Keeping your family and friends updated while travelling is important for safety reasons,</p>
+            <p class="p6-desc">as they can contact you in case of an emergency, and it also allows them to know your whereabouts. Additionally,</p>
+            <p class="p6-desc">it helps maintain a connection with loved ones, sharing your experiences and allowing them</p>
+            <p class="p6-desc">enjoy your journey vicariously.</p>
+        </div>
+        <br>
+        <br>
+        <br>
+        <div class="step7-text">
+            <p class="p1-traveltips"><b> Step 7:</b> Safeguard your hotel room </p>
+        </div>
+        <div class="step7-img">
+            <img src="picture/hotel.jpeg" width="30%">
+        </div>
+        <div class="s7-decs">
+            <p class="p7-desc">Safeguarding your hotel room while traveling in crucial for personal security and peace of mind,</p>
+            <p class="p7-desc">ensuring that your belongings are secure and that you have a safe space to return to after exploring.</p>
+            <p class="p7-desc">It also minimizes the risk of theft or unauthorized access, allowing you to relax</p>
+            <p class="p7-desc">and enjoy your travels without unnecessary worry.</p>
+        </div>
+        <br>
+        <br>
+        <br>
+        <div class="step8-text">
+            <p class="p1-traveltips"><b> Step 8:</b> Always beware of your surroundings </p>
+        </div>
+        <div class="step8-img">
+            <img src="picture/pickpocket.jpg" width="30%">
+        </div>
+        <div class="s8-decs">
+            <p class="p8-desc">being aware of your surrounding while travelling is essential for personal safety, enabling you to identify</p>
+            <p class="p8-desc">potential risk and stay vigilant in unfamiliar environments. It also enhance the overall travel experience by allowing</p>
+            <p class="p8-desc">you to appreciate and navigate new locations with greater confidence and awareness.</p>
+        </div>
+        <br>
+        <br>
+        <br>
+        <br>
+        <div class="footer"> 
+            <br>
+            <a href="aboutus.html" target="_blank">About Us</a>
+            <br>
+            <br>
+            <p class="pfooter"> This local website created for assignment purposed only.</p>
+            <p class="pfooter"> Recommended browser Microsoft Resolution 1696x645</p>
+            <p class="pfooter"><b>Last Update:</b> January 1st, 2024</p>
+            <p class="pfooter">&copy; Copyright 2024. Kg Layang-Layangan Local Website, All Rights Reserved.</p>
+            <br>
+            <div>
+                <audio controls autoplay loop>
+                    <source src="TakeMyHand_instrumental.mp3" type="audio/mp3" >
+                </audio>
+            </div>
+          </div>
+</body>
+</html>

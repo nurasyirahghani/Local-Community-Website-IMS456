@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Karma">
+    <link rel="stylesheet" href="style.css">
+    <title>GALLERY</title>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <ul class="links-container">
+                <li class="link-item"><a href="index.html">Home</a></li>
+                <li class="link-item"><a href="background.html">Background</a></li>
+                <li class="link-item"><a href="todo.html">ToDo</a></li>
+                <li class="link-item"><a href="accommodation.html">Accommodation</a></li>
+                <li class="link-item"><a href="aboutus.html"><img src="picture/officiallogo.png" class="logo" alt="Layang Layangan Logo"></a></li>
+                <li class="link-item"><a href="recommendation.html">Recommendation</a></li>
+                <li class="link-item"><a href="traveltips.html">TravelTips</a></li>
+                <li class="link-item"><a href="gallery.html">Gallery</a></li>
+                <li class="link-item"><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="background">
+        <img src="picture/gallerybg.jpg" class="background-image" width="100%">
+        <!-- grid -->
+        <div class="grid-slider">
+            <div class="grid-item hide"></div>
+            <div class="grid-item hide"></div>
+            <div class="grid-item hide"></div>
+            <div class="grid-item hide"></div>
+            <div class="grid-item hide"></div>
+            <div class="grid-item hide"></div>
+        </div>
+        <script>
+        //header
+            //slider image array
+        
+            const sliderImgs = ["picture/img1.jpeg", "picture/img2.jpeg", "picture/img3.jpeg", "picture/img4.jpeg", "picture/img5.jpeg", "picture/img6.jpeg"];
+            let sliderImage = document.querySelector('.background-image');
+            let sliderGrids = [...document.querySelectorAll('.grid-item')];
+    
+            let currentImage = 0;
+    
+            setInterval(() => {
+                changeSliderImage();
+            }, 5000);
+    
+            const changeSliderImage = () => {
+                sliderGrids.map((gridItem, index) => {
+                    setTimeout(() => {
+                        gridItem.classList.remove('hide');
+    
+                        setTimeout(() => {
+    
+                            if(index == sliderGrids.length - 1){
+                                if(currentImage >= sliderImgs.length - 1){
+                                    currentImage = 0;
+                                } else{
+                                    currentImage++;
+                                }
+    
+                                sliderImage.src = `img/${sliderImgs[currentImage]}`;
+    
+                                sliderGrids.map((item, i) => {
+                                    setTimeout(() => {
+                                        item.classList.add('hide')
+                                    }, i * 100);
+                                })
+    
+                            }
+    
+                        }, 100);
+    
+                    }, index * 100);
+                 })
+            }
+        </script>
+    </div>
+    <main class="hero-section" id="hero-section">
+
+        <div class="hero-section-content" data-aos="fade-up">
+            <h1 class="hero-section-title">Capture the Moments</h1>
+            <h2 class="hero-section-sub-heading">picture as souvenir at Kg Layang-Layangan</h2>
+            <br>
+            <br>
+            <br>
+            <p class="hero-section-sub-heading-one">Scroll Down</p>
+        </div>
+        <!-- scroll down img -->
+        <img src="picture/downarrow.png" class="scroll-down-icon" alt="scroll down indicator">
+    </main>
+    <div class="travel-section">
+        <br>
+        <br>
+        <h1 class="travel-title">GALLERY</h1>
+        <br>
+        <br>
+        <p class="p1-travel">Get to know more places full of <b>mesmerizing views and interesting places</b>!</p>
+    </div>
+    <!-- grid -->
+    <div class="w3-main w3-content w3-padding" style="max-width:1200px;margin-top:100px;justify-content:space-between">
+    
+        <!-- First Photo Grid-->
+        <div class="w3-row-padding w3-padding-16 w3-center">
+            <div class="w3-quarter">
+              <img src="picture/image22.jpg" alt="Point" style="width:100%">
+              <p><b>Kg. Layang-layangan</b></p>
+              <p> > Here is the start for everything interesting for your holiday.</p>
+            </div>
+            <div class="w3-quarter">
+              <img src="picture/image23.jpg" alt="bridge" style="width:100%">
+              <p><b>Layang-layangan Beach</b></p>
+              <p>This place is very convenience to anyone especially, for travellers that came with car or any vehicle. They can park their vehicles here and enjoy the relxation and sunset on the beach.</p>
+            </div>
+            <div class="w3-quarter">
+              <img src="picture/image21.jpg" alt="Park" style="width:100%">
+              <p><b>Layang-layangan Beach</b></p>
+              <p>This beach is also popular among water sports enthusiasts, offering fantastic opportunities for activities such as kite surfing and windsurfing.</p>
+            </div>
+            <div class="w3-quarter">
+              <img src="picture/image20.jpg" alt="Peringatan" style="width:100%">
+              <p><b>Layang-layangan Beach</b></p>
+              <p>With its stunning sunsets and peaceful ambiance, Layang-Layangan Beach provides a serene retreat for visitors seeking relaxation and natural beauty.</p>
+            </div>
+          </div>
+        
+        
+        <!-- Second Photo Grid-->
+        <div class="w3-row-padding w3-padding-16 w3-center">
+          <div class="w3-quarter">
+            <img src="picture/image10.jpg" alt="Point" style="width:100%">
+            <p><b>Labuan Peace Park - Taman Damai</b></p>
+            <p>There are so many attractions here that visitors can visit.</p>
+          </div>
+          <div class="w3-quarter">
+            <img src="picture/image3.jpg" alt="Bridge" style="width:100%">
+            <p><b>Labuan Surrender Point</b></p>
+            <p>Surrender Point is a place of great historical significance and a must-visit on the Labuan World War II trail.</p>
+          </div>
+          <div class="w3-quarter">
+            <img src="picture/image6.jpg" alt="Point" style="width:100%">
+            <p><b>Tugu Peringatan Perdamaian</b></p>
+            <p>This "Tugu Peringatan Perdamaian" was built in addition to commemorating the lives lost in it.</p>
+          </div>
+          <div class="w3-quarter">
+            <img src="picture/image4.jpg" alt="Bridge" style="width:100%">
+            <p><b>Peace is The Best</b><p>
+            <p>it was built by the Japanese as a symbol of peace, harmony and friendship as well as a tribute to those who lost their lives in Borneo during World War II.</p>
+          </div>
+    
+        <!-- Third Photo Grid-->
+        <div class="w3-row-padding w3-padding-16 w3-center">
+          <div class="w3-quarter">
+            <img src="picture/image17.jpg" alt="Point" style="width:100%">
+            <p><b>Labuan Peace park</b></p>
+            <p>This Japanese Surrender Point within the park holds historical significance as the site where the Japanese formally surrendered to the Allied forces, marking the end of the war in the region. </p>
+          </div>
+          <div class="w3-quarter">
+            <img src="picture/image15.jpg" alt="Bridge" style="width:100%">
+            <p><b>Labuan Peace Park's Bridge</b></p>
+            <p>This bridge was built which based on the historical of World War II between Japanese and North Borneo.</p>
+          </div>
+          <div class="w3-quarter">
+            <img src="picture/image12.jpg" alt="Park" style="width:100%">
+            <p><b>Peace Park Rest Area</b></p>
+            <p>Visitors can rest in this place after a walk.</p>
+          </div>
+          <div class="w3-quarter">
+            <img src="picture/image18.jpg" alt="Peringatan" style="width:100%">
+            <p><b>Peace Park Public toilet</b></p>
+            <p>This public toilet was built for visitors' conveniences.</p>
+          </div>
+        </div>
+    
+        
+        <!-- Forth Photo Grid-->
+        <div class="w3-row-padding w3-padding-16 w3-center">
+            <div class="w3-quarter">
+                <img src="picture/imagesyzgiummyrtifolium.jpg" alt="Bridge" style="width:100%">
+                <p><b>Syzgium Myrtifolium</b></p>
+                <p>A park featuring the Syzygium myrtifolium plant, providing a peaceful and natural environment for visitors. It was planted by Japan War Bereaved Family Association in 30th October 2012. </p>
+              </div>
+      
+            <div class="w3-quarter">
+              <img src="picture/image2.jpg" alt="Park" style="width:100%">
+              <p><b>Labuan Peace Park</b></p>
+              <p>The raised memorial mound and arched walls at Labuan's Peace Park located in Taman Damai.</p>
+            </div>
+            <div class="w3-quarter">
+              <img src="picture/masjidjamek.jpg" alt="Park" style="width:100%">
+              <p><b>Masjid Jamek Layang-layangan</b></p>
+              <p>It serves as a center for community gatherings, prayer, and religious activities for Muslim.</p>
+            </div>
+            <div class="w3-quarter">
+              <img src="picture/image3.jpg" alt="Point" style="width:100%">
+              <p><b>Labuan Surrender Point</b></p>
+              <p>This Surrender Park is the exact spot where the Japanese army officially surrendered their ruling on Labuan to the Australians on 9 September 1945.</p>
+            </div>
+          </div>
+      
+        <!-- Fifth Photo Grid-->
+        <div class="w3-row-padding w3-padding-16 w3-center">
+            <div class="w3-quarter">
+              <img src="picture/image17.jpg" alt="Point" style="width:100%">
+              <p><b>Labuan Peace park</b></p>
+              <p>This Japanese Surrender Point within the park holds historical significance as the site where the Japanese formally surrendered to the Allied forces, marking the end of the war in the region. </p>
+            </div>
+            <div class="w3-quarter">
+              <img src="picture/image25.jpg" alt="bridge" style="width:100%">
+              <p><b>Fire & Rescue Station</b></p>
+              <p>The Fire and Rescue Station in Labuan serves as a crucial emergency response hub, providing rapid assistance and promoting fire safety within the community.</p>
+            </div>
+            <div class="w3-quarter">
+              <img src="picture/imagesurrenderpoint4.jpg" alt="Park" style="width:100%">
+              <p><b>Japanese Surrender Point</b></p>
+              <p>Japanese Surrender point is a famous and meaningful memorial spot located in this beautiful Labuan Peace Park.</p>
+            </div>
+            <div class="w3-quarter">
+              <img src="picture/imagesurrenderpointflower.jpg" alt="Peringatan" style="width:100%">
+              <p><b>Pathway at Peace Park Memorial Rock</b></p>
+              <p>A park featuring the flowers and plant, providing a peaceful and natural environment for visitors.</p>
+            </div>
+          </div>
+    
+              <!-- Sixth Photo Grid-->
+       <div class="w3-row-padding w3-padding-16 w3-center">
+            <div class="w3-quarter">
+                <img src="picture/image1945.jpg" alt="Bridge" style="width:100%">
+                <p><b>Labuan & Brunei & Australia 1945</b></p>
+                <p>A metal plaque providing information on Labuan's involvement in the Second World War.</p>
+              </div>
+            <div class="w3-quarter">
+              <img src="picture/image9.jpg" alt="bridge" style="width:100%">
+              <p><b>Taman Damai Labuan's Platue</b></p>
+              <p>It was built for the memorial of those who died at Pulau Borneo during the World War II.</p>
+            </div>
+            <div class="w3-quarter">
+              <img src="picture/imagesurrendermemorial.jpg" alt="Park" style="width:100%">
+              <p><b>Surrender Point Memorial</b></p>
+              <p>This Surrender Point Memorial shows about how the surrender point happened between Japan and Labuan.</p>
+            </div>
+            <div class="w3-quarter">
+              <img src="picture/imagesurrenderpoint3.jpg" alt="Peringatan" style="width:100%">
+              <p><b>Pathway at Peace Park Memorial Rock</b></p>
+              <p>On September 10th, 1945, the leader of the 9th Division of the Australian Imperial Forces accepted the surrender of the 37th Japanese Army in North Borneo at this location.</p>
+            </div>
+          </div>
+    
+          <br>
+          <br>
+          <br>
+          <br>
+    
+           <!-- Seventh Video Grid-->
+        <div class="w3-row-padding w3-padding-16 w3-center">
+            <div class="w3-quarter">
+                <video width="200" controls>
+                    <source src="video/video1.mov" type="video/mp4">
+                </video></td>
+              <p><b>Labuan Peace Park's bridge</b></p>
+            </div>
+            <div class="w3-quarter">
+                <video width="200" controls>
+                    <source src="video/video2.mov" type="video/mp4">
+                </video></td>
+              <p><b>Peace Park Rest Area</b></p>
+            </div>
+            <div class="w3-quarter">
+                <video width="200" controls>
+                    <source src="video/video3.mov" type="video/mp4">
+                </video></td>
+              <p><b>Peace Park Memorial</b></p>
+                  </div>
+            <div class="w3-quarter">
+                <video width="200" controls>
+                    <source src="video/video4.mov" type="video/mp4">
+                </video></td>
+              <p><b>Kg. Layang-layangan Beach</b></p>
+            </div>
+          </div>
+        </div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <div class="footer"> 
+        <br>
+        <a href="aboutus.html" target="_blank">About Us</a>
+        <br>
+        <br>
+        <p class="pfooter"> This local website created for assignment purposed only.</p>
+        <p class="pfooter"> Recommended browser Microsoft Resolution 1696x645</p>
+        <p class="pfooter"><b>Last Update:</b> January 1st, 2024</p>
+        <p class="pfooter">&copy; Copyright 2024. Kg Layang-Layangan Local Website, All Rights Reserved.</p>
+        <br>
+        <div>
+            <audio controls autoplay loop>
+                <source src="TakeMyHand_instrumental.mp3" type="audio/mp3" >
+            </audio>
+        </div>
+      </div>
+</body>
+</html>

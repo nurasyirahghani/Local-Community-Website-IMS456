@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Karma">
+    <link rel="stylesheet" href="style.css">
+    <title>HOME</title>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <ul class="links-container">
+                <li class="link-item"><a href="index.html">Home</a></li>
+                <li class="link-item"><a href="background.html">Background</a></li>
+                <li class="link-item"><a href="todo.html">ToDo</a></li>
+                <li class="link-item"><a href="accommodation.html">Accommodation</a></li>
+                <li class="link-item"><a href="aboutus.html"><img src="picture/officiallogo.png" class="logo" alt="Layang Layangan Logo"></a></li>
+                <li class="link-item"><a href="recommendation.html">Recommendation</a></li>
+                <li class="link-item"><a href="traveltips.html">TravelTips</a></li>
+                <li class="link-item"><a href="gallery.html">Gallery</a></li>
+                <li class="link-item"><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="background">
+        <img src="picture/mainbg.jpg" class="background-image" width="100%">
+        <!-- grid -->
+        <div class="grid-slider">
+            <div class="grid-item hide"></div>
+            <div class="grid-item hide"></div>
+            <div class="grid-item hide"></div>
+            <div class="grid-item hide"></div>
+            <div class="grid-item hide"></div>
+            <div class="grid-item hide"></div>
+        </div>
+        <script>
+        //header
+            //slider image array
+        
+            const sliderImgs = ["picture/img1.jpeg", "picture/img2.jpeg", "picture/img3.jpeg", "picture/img4.jpeg", "picture/img5.jpeg", "picture/img6.jpeg"];
+            let sliderImage = document.querySelector('.background-image');
+            let sliderGrids = [...document.querySelectorAll('.grid-item')];
+    
+            let currentImage = 0;
+    
+            setInterval(() => {
+                changeSliderImage();
+            }, 5000);
+    
+            const changeSliderImage = () => {
+                sliderGrids.map((gridItem, index) => {
+                    setTimeout(() => {
+                        gridItem.classList.remove('hide');
+    
+                        setTimeout(() => {
+    
+                            if(index == sliderGrids.length - 1){
+                                if(currentImage >= sliderImgs.length - 1){
+                                    currentImage = 0;
+                                } else{
+                                    currentImage++;
+                                }
+    
+                                sliderImage.src = `img/${sliderImgs[currentImage]}`;
+    
+                                sliderGrids.map((item, i) => {
+                                    setTimeout(() => {
+                                        item.classList.add('hide')
+                                    }, i * 100);
+                                })
+    
+                            }
+    
+                        }, 100);
+    
+                    }, index * 100);
+                 })
+            }
+        </script>
+    </div>
+    <main class="hero-section" id="hero-section">
+
+        <div class="hero-section-content" data-aos="fade-up">
+            <h1 class="hero-section-title">Wonderful Experience</h1>
+            <h2 class="hero-section-sub-heading">Uncover the Wonders at Kg Layang-Layangan</h2>
+            <br>
+            <br>
+            <br>
+            <p class="hero-section-sub-heading-one">Scroll Down to Explore More !</p>
+        </div>
+        <!-- scroll down img -->
+        <img src="picture/downarrow.png" class="scroll-down-icon" alt="scroll down indicator">
+    </main>
+    <div class="content1">
+        <br>
+        <br>
+        <p class="p1-index"><b>A Glimpse:</b>The Presence of Wonder</p>
+        <div class="cvideo">
+            <video controls autoplay muted loop>
+                <source src="video/oceanview.mp4" type="video/mp4">
+            </video>
+        </div>
+        <div class="map">
+            <br>
+            <br>
+            <img src="picture/map2.png" alt="layangan-satelite-map" class="map1">
+        </div>
+    </div>
+    <div class="content2">
+        <br>
+        <p class="p2-index">
+            Kg Layang-Layangan is one of 27 vilagges exist in Federal Territory of Labuan. </p>
+        <p class="p2-index">
+            The named of the village come from the small island located in front of the village that
+        </p>
+        <p class="p2-index">
+            was around 80 square meters which used to have many types of snakes and birds named 'Layang-Layang'
+            .</p>
+        <p class="p2-index"> 
+            The village is strategically located and gifted with a beautiful and mesmerizing view of the ocean.</p>
+        <p class="p2-index"> 
+            The villagers were from a variety of ethnic and races which consist of Kedayan, Brunei,</p>
+        <p class="p2-index"> 
+            Kadazan, Cina, and India but the majority of the people were from Kedayan and Brunei.</p>
+    </div>
+    <br>
+    <br>
+    <div class="content3">
+        <h1 class="c3-title">BRIEF HISTORY</h1>
+        <br>
+        <p class="p3-index">
+            Kg Layang-Layangan not only popular due to its mesmerizing</p>
+        <p class="p3-index">
+            ocean view, but it is also known for the historical attractions among the tourist.</p>
+        <p class="p3-index">
+            There is park called Peace Park that serves as a World War II memorial</p>
+        <p class="p3-index">
+            and poignant reminder of the horrors of war. It is been stated in history that Labuan was</p>
+        <p class="p3-index"> 
+            under Japanese occupation for four year before being yielded to Allied Forces on 10th September 1945.</p>
+        <p class="p3-index">
+            This park was built by the Japanese as a symbol of peace, harmony, and friendship</p>
+        <p class="p3-index">
+            as well as a tribute to those who lost their lives during the World War II.</p>
+    </div>
+    <br>
+    <br>
+    <br>
+    <div class="button1">
+        <a href="background.html"><img src="picture/btn1.png" alt="btn-more" class="btn1"></a>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <div class="footer"> 
+        <br>
+        <a href="aboutus.html" target="_blank">About Us</a>
+        <br>
+        <br>
+        <p class="pfooter"> This local website created for assignment purposed only.</p>
+        <p class="pfooter"> Recommended browser Microsoft Resolution 1696x645</p>
+        <p class="pfooter"><b>Last Update:</b> January 1st, 2024</p>
+        <p class="pfooter">&copy; Copyright 2024. Kg Layang-Layangan Local Website, All Rights Reserved.</p>
+        <br>
+        <div class="caudio">
+            <audio controls autoplay loop>
+                <source src="TakeMyHand_instrumental.mp3" type="audio/mp3">
+            </audio>
+        </div>
+      </div>
+</body>
+</html>

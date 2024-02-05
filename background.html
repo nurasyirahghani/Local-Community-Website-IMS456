@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Karma">
+    <link rel="stylesheet" href="style.css">
+    <title>BACKGROUND</title>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <ul class="links-container">
+                <li class="link-item"><a href="index.html">Home</a></li>
+                <li class="link-item"><a href="background.html">Background</a></li>
+                <li class="link-item"><a href="todo.html">ToDo</a></li>
+                <li class="link-item"><a href="accommodation.html">Accommodation</a></li>
+                <li class="link-item"><a href="aboutus.html"><img src="picture/officiallogo.png" class="logo" alt="Layang Layangan Logo"></a></li>
+                <li class="link-item"><a href="recommendation.html">Recommendation</a></li>
+                <li class="link-item"><a href="traveltips.html">TravelTips</a></li>
+                <li class="link-item"><a href="gallery.html">Gallery</a></li>
+                <li class="link-item"><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="background">
+        <img src="picture/singboard.jpg" class="background-image" width="100%">
+        <!-- grid -->
+        <div class="grid-slider">
+            <div class="grid-item hide"></div>
+            <div class="grid-item hide"></div>
+            <div class="grid-item hide"></div>
+            <div class="grid-item hide"></div>
+            <div class="grid-item hide"></div>
+            <div class="grid-item hide"></div>
+        </div>
+        <script>
+        //header
+            //slider image array
+        
+            const sliderImgs = ["picture/img1.jpeg", "picture/img2.jpeg", "picture/img3.jpeg", "picture/img4.jpeg", "picture/img5.jpeg", "picture/img6.jpeg"];
+            let sliderImage = document.querySelector('.background-image');
+            let sliderGrids = [...document.querySelectorAll('.grid-item')];
+    
+            let currentImage = 0;
+    
+            setInterval(() => {
+                changeSliderImage();
+            }, 5000);
+    
+            const changeSliderImage = () => {
+                sliderGrids.map((gridItem, index) => {
+                    setTimeout(() => {
+                        gridItem.classList.remove('hide');
+    
+                        setTimeout(() => {
+    
+                            if(index == sliderGrids.length - 1){
+                                if(currentImage >= sliderImgs.length - 1){
+                                    currentImage = 0;
+                                } else{
+                                    currentImage++;
+                                }
+    
+                                sliderImage.src = `img/${sliderImgs[currentImage]}`;
+    
+                                sliderGrids.map((item, i) => {
+                                    setTimeout(() => {
+                                        item.classList.add('hide')
+                                    }, i * 100);
+                                })
+    
+                            }
+    
+                        }, 100);
+    
+                    }, index * 100);
+                 })
+            }
+        </script>
+    </div>
+    <main class="hero-section" id="hero-section">
+
+        <div class="hero-section-content" data-aos="fade-up">
+            <h1 class="hero-section-title">Learn More</h1>
+            <h2 class="hero-section-sub-heading">about Kg Layang-Layangan</h2>
+            <br>
+            <br>
+            <br>
+            <p class="hero-section-sub-heading-one">Scroll Down</p>
+        </div>
+        <!-- scroll down img -->
+        <img src="picture/downarrow.png" class="scroll-down-icon" alt="scroll down indicator">
+    </main>
+    <br>
+    <br>
+    <br>
+    <p class="p1-background">The Map of <b>Federal Territory Labuan</b></p>
+    <br>
+    <div class="content4">
+        <div class="map2">
+            <img src="picture/lbnmap.png" alt="labuan-satelite-map" class="map2-1">
+            <br>
+        </div>
+    </div>
+    <br>
+    <br>
+    <div class="content5">
+        <h1 class="c5-title">MORE INFORMATION</h1>
+        <br>
+        <br>
+        <p class="p5-background">
+            Kg Layang-Layangan located in Pulau Labuan, a Federal Territory of Malaysia. </p>
+        <p class="p5-background">
+            possesses a rich historical tapestry. Initially, it was a quaint fishing village, indicative</p>
+        <p class="p5-background">
+            of the traditional lifestyle prevalent in many parts of Malaysia. The history of Labuan itself, marked by its strategic location off the</p>
+        <p class="p5-background">
+            coast of Borneo, has seen it under the rule of the Bruneian Empire, the British colonial administration, and the Japanese occupation during World War II.</p>
+        <p class="p5-background">
+            This complex history has left an indelible mark on Kampung Layang Layangan, influencing its cultural and societal structures. The remnants of these eras,</p>
+        <p class="p5-background">
+            whether in the form of old architecture or in the stories passed down through generations, contribute to the village's unique character.</p>
+        <p class="p5-background">
+            The village's social and cultural environment is a rich mosaic, reflective of Malaysia's broader diversity.</p>
+        <p class="p5-background">
+            The population comprises various ethnic groups such as the Bruneian Malays, Kadazan-Dusun, Chinese, and Indian communities, each contributing</p>
+        <p class="p5-background">
+            their unique cultural practices, festivals, and cuisines. This diversity is a cornerstone of the village's identity, celebrated through events</p>
+        <p class="p5-background">
+            and daily social interactions. Architecturally, the village is known for its traditional houses built on stilts, a distinctive feature</p>
+        <br>
+        <br>
+        <p class="p5-background">
+            that resonates with the coastal lifestyle and adds to the area's scenic beauty. The blend of different cultures and traditions</p>
+        <p class="p5-background">
+            in Kampung Layang Layangan offers a glimpse into the harmonious multicultural coexistence that is a hallmark of Malaysian society.</p>
+        <p class="p5-background">
+            While traditionally the village's economy was centered around fishing, there has been a significant shift towards tourism and</p>
+        <p class="p5-background">
+            small-scale entrepreneurship. The pristine beaches, cultural richness, and historical significance of the area draw tourists,</p>
+        <p class="p5-background">
+            both domestic and international, contributing to the village's economic growth. Additionally, Labuan's status as an offshore financial center</p>
+        <p class="p5-background">
+            and a Federal Territory brings in a flow of investment and development projects, which indirectly benefit Kampung Layang Layangan.</p>
+        <p class="p5-background">
+            This economic diversification reflects a transition from a solely traditional economy to a more varied and sustainable one, intertwining the</p>
+        <p class="p5-background">
+            village's cultural heritage with new economic opportunities. The community's ability to maintain its cultural essence while adapting</p>
+        <p class="p5-background">
+            to economic changes is a testament to its resilience and dynamic nature.</p>
+        <br>
+        <br>
+        <br>
+    </div>
+    <!-- Side by Side Images-->
+    <div class="row">
+        <div class="column">
+            <img src="picture/img7.jpg" alt="Sign-Board" style="width:100%">
+        </div>
+        <div class="column">
+            <img src="picture/img9.jpg" alt="bridge" style="width:100%">
+        </div>
+        <div class="column">
+            <img src="picture/img7a.jpeg" alt="Park" style="width:100%">
+        </div>
+        <div class="column">
+            <img src="picture/img10.jpeg" alt="Peringatan" style="width:100%">
+        </div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <div class="footer"> 
+        <br>
+        <a href="aboutus.html" target="_blank">About Us</a>
+        <br>
+        <br>
+        <p class="pfooter"> This local website created for assignment purposed only.</p>
+        <p class="pfooter"> Recommended browser Microsoft Resolution 1696x645</p>
+        <p class="pfooter"><b>Last Update:</b> January 1st, 2024</p>
+        <p class="pfooter">&copy; Copyright 2024. Kg Layang-Layangan Local Website, All Rights Reserved.</p>
+        <br>
+        <div class="caudio">
+            <audio controls autoplay loop>
+                <source src="TakeMyHand_instrumental.mp3" type="audio/mp3" >
+            </audio>
+        </div>
+      </div>
+</body>
+</html>

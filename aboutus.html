@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Karma">
+    <link rel="stylesheet" href="style.css">
+    <title>ABOUT US</title>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <ul class="links-container">
+                <li class="link-item"><a href="index.html">Home</a></li>
+                <li class="link-item"><a href="background.html">Background</a></li>
+                <li class="link-item"><a href="todo.html">ToDo</a></li>
+                <li class="link-item"><a href="accommodation.html">Accommodation</a></li>
+                <li class="link-item"><a href="aboutus.html"><img src="picture/officiallogo.png" class="logo" alt="Layang Layangan Logo"></a></li>
+                <li class="link-item"><a href="foodrec.html">Recommendation</a></li>
+                <li class="link-item"><a href="traveltips.html">TravelTips</a></li>
+                <li class="link-item"><a href="gallery.html">Gallery</a></li>
+                <li class="link-item"><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="background">
+        <img src="picture/mainbg.jpg" class="background-image" width="100%">
+        <!-- grid -->
+        <div class="grid-slider">
+            <div class="grid-item hide"></div>
+            <div class="grid-item hide"></div>
+            <div class="grid-item hide"></div>
+            <div class="grid-item hide"></div>
+            <div class="grid-item hide"></div>
+            <div class="grid-item hide"></div>
+        </div>
+        <script>
+        //header
+            //slider image array
+        
+            const sliderImgs = ["picture/img1.jpeg", "picture/img2.jpeg", "picture/img3.jpeg", "picture/img4.jpeg", "picture/img5.jpeg", "picture/img6.jpeg"];
+            let sliderImage = document.querySelector('.background-image');
+            let sliderGrids = [...document.querySelectorAll('.grid-item')];
+    
+            let currentImage = 0;
+    
+            setInterval(() => {
+                changeSliderImage();
+            }, 5000);
+    
+            const changeSliderImage = () => {
+                sliderGrids.map((gridItem, index) => {
+                    setTimeout(() => {
+                        gridItem.classList.remove('hide');
+    
+                        setTimeout(() => {
+    
+                            if(index == sliderGrids.length - 1){
+                                if(currentImage >= sliderImgs.length - 1){
+                                    currentImage = 0;
+                                } else{
+                                    currentImage++;
+                                }
+    
+                                sliderImage.src = `img/${sliderImgs[currentImage]}`;
+    
+                                sliderGrids.map((item, i) => {
+                                    setTimeout(() => {
+                                        item.classList.add('hide')
+                                    }, i * 100);
+                                })
+    
+                            }
+    
+                        }, 100);
+    
+                    }, index * 100);
+                 })
+            }
+        </script>
+    </div>
+
+    <main class="hero-section" id="hero-section">
+
+        <div class="hero-section-content" data-aos="fade-up">
+            <h1 class="hero-section-title">About Us</h1>
+            <h2 class="hero-section-sub-heading">our team members's details</h2>
+        </div>
+
+        <!-- scroll down img -->
+        <img src="picture/arrowdown.png" class="scroll-down-icon" alt="scroll down indicator">
+    </main>
+</body>
+<br>
+<br>
+<br>
+<div class="aboutus-section">
+    <br>
+    <br>
+    <h1 class="aboutus-title">ABOUT US</h1>
+    <br>
+    <br>
+    <p class="p1-travel"><b>Group Member Information</b></p>
+</div>
+<div class="w3-container w3-padding-large a" style="margin-bottom:32px"></div>
+    <table width="80%" cellspacing="3" cellspacing="2" align="center" border="1px" data-aos="fade-up"  >
+        <tr>
+            <th >Title</th>
+          <td>
+            <br>
+            Uncover the Wonders of Kg. Layang-Layangan
+            <br>
+            <BR>
+            </td>
+        </tr>
+        <tr>
+          <th> Group member's name</th>
+          <td>
+            <br>
+            1. Adila Binti Ahmad Sukeri
+              <br>2. Nur Alia Binti Mohd Nizam
+              <br>3. Nurasyirah Binti Abdul Ghani
+              <br>4. Nur Lisa Binti Shamsul Anuar
+            <br>
+            <br>
+        </td>
+        </tr>
+        <tr>
+          <th>Group member's ID</th>
+          <td>
+            <br>
+                    1. 2022757965
+              <br>  2. 2022752987
+             <br>   3. 2022752979
+              <br>  4. 2022741533
+            <br>
+            <br>
+        </td>
+        </tr>
+        <tr>
+            <th>Group</th>
+            <td>
+                <br>
+                 ELEK B
+            <br>
+            <br>
+        </td>
+          </tr>
+          <tr>
+            <th>Course Code</th>
+            <td>
+                <br>
+                 IMS4561
+            <br>
+            <br>
+            </td>
+          </tr>
+          <tr>
+            <th>Course Name</th>
+            <td>
+                <br>
+                 Basic Web Design and Content Management
+            <br>
+            <br>
+        </td>
+          </tr>
+          <tr>
+            <th>Program Code & Mode</th>
+            <td>
+                <br>
+                 IM244 & IM246
+                <br>
+                <br>
+            </td>
+          </tr>
+          <tr>
+            <th>Faculty</th>
+            <td>
+                <br>
+                 SCHOOL OF  INFORMATION SCIENCE, COLLEGE OF COMPUTING, INFORMATICS & MATHEMATICS
+                <br>
+                <br>
+            </td>
+          </tr>
+          <tr>
+            <th>Submission Date</th>
+            <td>
+                <br>
+                 2<sup>nd</sup> February 2024
+                <br>
+                <br>
+            </td>
+          </tr>
+          <tr>
+            <th>Published URL</th>
+            <td>
+                <br>
+                <a href="https://nurasyirahghani.github.io/Local-Community-Website-IMS456/" target="_blank">https://nurasyirahghani.github.io/Local-Community-Website-IMS456/</a>
+                <br>
+                <br>
+            </td>
+          </tr>
+          <tr>
+            <th>Group Image</th>
+            <td class="aboutus-img">
+                <br>
+                <img src="picture/groupimage.png" style="width: 40%;">
+                <br>
+                <br>
+                <br>
+            </td>
+          </tr>
+    </table>
+</div>
+<br>
+<br>
+<br>
+<br>
+<div class="footer"> 
+    <br>
+    <a href="index.html" target="_blank">Back Home</a>
+    <br>
+    <br>
+    <p class="pfooter"> This local website created for assignment purposed only.</p>
+    <p class="pfooter"> Recommended browser Microsoft Resolution 1696x645</p>
+    <p class="pfooter"><b>Last Update:</b> January 1st, 2024</p>
+    <p class="pfooter">&copy; Copyright 2024. Kg Layang-Layangan Local Website, All Rights Reserved.</p>
+    <br>
+    <div>
+        <audio controls autoplay loop>
+            <source src="TakeMyHand_instrumental.mp3" type="audio/mp3" >
+        </audio>
+    </div>
+  </div>
+</body>
+</html>
